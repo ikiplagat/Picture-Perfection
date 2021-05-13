@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Picture Perfection - {{title}}</title>
+  {% else %}
+    <title> Picture Perfection </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} <h1>Picture Perfection - Ian</h1> {%endblock%}
+</body>
+</html>
