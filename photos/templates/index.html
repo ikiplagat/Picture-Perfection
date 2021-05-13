@@ -8,7 +8,7 @@
   {% if title %}
   <title>Picture Perfection - {{title}}</title>
   {% else %}
-    <title> Picture Perfection </title>
+    <title> Home </title>
   {% endif %}
 
   {% block styles %}
@@ -20,7 +20,7 @@
 <body>
   {% include "navbar.html" %}
 
-  {% block content %} <h1 class="text-center">Picture Perfection - Ian</h1> {%endblock%}
+  {% block content %} <h1 class="text-center">Hi</h1> {%endblock%}
   {% block scripts %}
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {% bootstrap_javascript %}
