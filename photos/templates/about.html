@@ -1,31 +1,36 @@
-{% load bootstrap5 %}
-{% load static %}
+{% load bootstrap5 %} {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  {% if title %}
-  <title>Picture Perfection - {{title}}</title>
-  {% else %}
-    <title> About us </title>
-  {% endif %}
+    {% if title %}
+    <title>Picture Perfection - {{title}}</title>
+    {% else %}
+    <title>About us</title>
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    {% endblock %}
+  </head>
+  <body>
+    {% include "navbar.html" %} {% block content %}
 
-  {% block styles %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  {% endblock %}
+    <div class="container-fluid bgc">
+      <h3 class="text-center pt-3">About Pic Perfect</h3>
+      <div class="container col-md-8">
+        <strong><p class="text-center pt-3">Picture Perfect is home to a collection of beautiful high resolution photos for your everyday need. We are proud of our selection so far and are working towards establishing a larger library of photos collected from around the world.</p></strong>
+        <strong
+          ><p class="text-center">
+            We hand-select every photo and accept only the best, so that no
+            matter what you need—you’ll find exactly what you’re looking for on
+            Picture Perfect.
+          </p></strong
+        >
+      </div>
+    </div>
 
-</head>
-<body>
-  {% include "navbar.html" %}
-
-  {% block content %} 
-  
-   {%endblock%}
-  {% block scripts %}
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {% bootstrap_javascript %}
-  {% endblock %}
-</body>
+    {%endblock%} {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
+  </body>
 </html>
