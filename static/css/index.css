@@ -112,17 +112,17 @@ input[type="button"]:hover {
   padding-left: 250px;
   padding-right: 250px;
 }
-div.gallery {
-  margin: 5px;
+.gallery {
+  margin: 10px;
   border: 1px solid #ccc;
   float: left;
 }
 
-div.gallery:hover {
+.gallery:hover {
   border: 1px solid #777;
 }
 
-div.gallery img {
+.gallery img {
   width: 100%;
   height: auto;
 }

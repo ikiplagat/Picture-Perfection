@@ -1,21 +1,23 @@
 {%extends 'all-photos/base.html'%} {% block content %}
 <div class="container-fluid bgc">
-  <div class="row">
-    {% if images%}
-    <h2>Found {{ images|length }} of searched term {{message}}</h2>
+  {% if images%}
+    <h2 class="ppf">Found {{ images|length }} of searched term {{message}}</h2>
     {% else %}
     <h2 class="ppc">Found 0 photos for the search term {{message}}</h2>
     {% endif %}
-  </div>
-
-  <div class="row">
+</div>
+<div class="container-fluid mt-5">
+  <div class="gallery col-md-4">
     {% if images %} {% for image in images %}
-    <div class="col-sm-6 col-md-3">
-      <h1>{{image.name}}</h1>
-      <img src="{{ image.image.url }}" alt="" />
-      {{ image.image.url }}
+    <!--Display photos Article images  -->
+    <div class="row">
+      <div class="">
+        <img src="{{ image.image.url }}" class="img-responsive" alt="Image" width="600" height="200">
+        {{ image.image.url }}
+      </div>
     </div>
     {% endfor %} {% endif %}
   </div>
 </div>
 {% endblock %}
+

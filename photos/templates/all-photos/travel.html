@@ -8,7 +8,7 @@
   <h5 class="marginleft">From the west to the east, you can't miss a sight that pleases.</h5>
 </div>
 {% endif %}
-<div class="container mt-5">
+<div class="container-fluid mt-5">
 
   <!-- Looping through photos   -->
   {% for photos_item in images %}
@@ -16,7 +16,9 @@
   <div class="gallery col-md-4">
     <!--Display photos Article images  -->
     <div class="row">
-      <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image" width="600" height="200">
+      <div class="">
+        <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image" width="600" height="200">
+      </div>
     </div>
 
   </div>
