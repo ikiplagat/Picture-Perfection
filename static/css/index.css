@@ -3,6 +3,10 @@
 }
 .bg {
   background: #5ae881;
+  height: 350px;
+}
+.bgc {
+  background: #5ae881;
   height: 250px;
 }
 .navbar-brand {
@@ -89,4 +93,22 @@ input[type="button"]:hover {
 }
 .contactDetails {
   background: #5ae881;
+}
+.ppf {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-left: 250px;
+}
+.ppc {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-left: 138px;
+}
+.pform {
+  display: flex;
+  flex-direction: column;
+  padding-left: 250px;
+  padding-right: 250px;
 }
