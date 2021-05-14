@@ -16,6 +16,14 @@ def travel_photos(request):
     images = Image.search_by_category("travel")
     return render(request, 'all-photos/travel.html', {"images":images})
 
+def food_photos(request):
+    images = Image.search_by_category("food")
+    return render(request, 'all-photos/food.html', {"images":images})
+
+def fitness_photos(request):
+    images = Image.search_by_category("fitness")
+    return render(request, 'all-photos/fitness.html', {"images":images})
+
 def search_results(request):
     
     if 'image' in request.GET and request.GET["image"]:
