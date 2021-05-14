@@ -112,3 +112,27 @@ input[type="button"]:hover {
   padding-left: 250px;
   padding-right: 250px;
 }
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+.marginleft {
+  margin-left: 100px;
+  font-weight: bold;
+}
+.input-group-text {
+  margin-top: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+}

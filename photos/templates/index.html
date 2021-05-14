@@ -19,9 +19,9 @@
       <div class="pform">
         <form class="form" role="search" action="{% url 'search_results' %}">
           <div class="input-group">
-            <span class="input-group-text material-icons-outlined">
-              <img src="/static/photos/search.png" alt=""
-            /></span>
+            <div class="input-group-prepend">
+              <span class="input-group-text"><img src="/static/photos/search.png" alt=""></span>
+            </div>
             <input
               type="text"
               class="form-control"
@@ -33,9 +33,9 @@
                 <!-- <i class="glyphicon glyphicon-search"></i> -->
               </button>
             </div>
-            <p>Search by category or location</p>
           </div>
         </form>
+        <p>Search by category or location</p>
       </div>
     </div>
     {%endblock%} {% block scripts %}

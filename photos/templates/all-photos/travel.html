@@ -2,21 +2,21 @@
 
 {% block content %}
 {{block.super}}
-
-<div class="container">
+{% if images%}
+<div class="container-fluid bgc">
+  <h1 class="ppf">{{ image.category.name }}</h1>
+  <h5 class="marginleft">From the west to the east, you can't miss a sight that pleases.</h5>
+</div>
+{% endif %}
+<div class="container mt-5">
 
   <!-- Looping through photos   -->
   {% for photos_item in images %}
 
-  <div class="row">
-    <!-- displaying photos articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ photos_item.name}} </h2>
-    </div>
-
+  <div class="gallery col-md-4">
     <!--Display photos Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image">
+    <div class="row">
+      <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image" width="600" height="200">
     </div>
 
   </div>
