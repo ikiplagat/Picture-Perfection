@@ -18,8 +18,11 @@
     <!-- {% include "footer.html" %} -->
 
     {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {% bootstrap_javascript %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       // Get the modal
@@ -27,7 +30,7 @@
 
       // Get the image and insert it inside the modal - use its "alt" text as a caption
       var img = document.getElementById("myImg");
-      var modalImg = document.getElementById("img01");
+      var modalImg = document.getElementById("img");
       var captionText = document.getElementById("caption");
       img.onclick = function () {
         modal.style.display = "block";
@@ -43,6 +46,7 @@
         modal.style.display = "none";
       };
     </script>
+
     {% endblock %}
   </body>
 </html>

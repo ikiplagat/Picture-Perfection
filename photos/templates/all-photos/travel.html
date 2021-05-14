@@ -1,34 +1,48 @@
-{%extends 'all-photos/base.html'%}
+{%extends 'all-photos/base.html'%} 
 
 {% block content %}
 {{block.super}}
-{% if images%}
-<div class="container-fluid bgc">
-  <h1 class="ppf">{{ image.category.name }}</h1>
-  <h5 class="marginleft">From the west to the east, you can't miss a sight that pleases.</h5>
-</div>
+{% if images %}
+  <div class="container-fluid bgc">
+    <h1 class="ppf">{{ image.category.name }}</h1>
+    <h5 class="marginleft">
+      From the west to the east, you can't miss a sight that pleases.
+    </h5>
+  </div>
 {% endif %}
 <div class="container-fluid pt-5">
 
   <!-- Looping through photos   -->
   {% for photos_item in images %}
 
-  <div class="gallery col-md-4">
-    <!--Display photos Article images  -->
-    <div class="row">
-      <div class="">
-        <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image">
+    <div class="gallery col-md-4">
+      <!--Display photos Article images  -->
+      <div class="row">
+        <div class="">
+          <img
+            id="myImg"
+            src="{{photos_item.image.url}}"
+            class="img-responsive"
+            alt="{{ photos_item.image.name }}"
+          />
+          <!-- Image Modal -->
+          <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img" />
+            <div id="caption"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-
   {% empty %}
+
     <div class="container-fluid bg">
       <div class="row">
         <h4 class="ppf">There Are No photos Items</h4>
       </div>
     </div>
+
   {% endfor %}
 
 </div>

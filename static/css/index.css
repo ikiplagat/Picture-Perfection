@@ -15,7 +15,7 @@
   font-size: 1.3em;
   margin-left: 5%;
 }
-.navbar-brand:hover{
+.navbar-brand:hover {
   color: black;
 }
 .nav-item {
@@ -44,7 +44,15 @@
   margin-left: 30px;
 }
 .dropdown-menu {
+  display: none;
+  position: absolute;
   background: #5ae881;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.drop:hover .dropdown-menu {
+  display: block;
 }
 .dropdown-item:hover {
   background: #52cb50;
@@ -129,6 +137,9 @@ input[type="button"]:hover {
   cursor: pointer;
   transition: 0.3s;
 }
+#myImg {
+  cursor: pointer;
+}
 .marginleft {
   margin-left: 100px;
   font-weight: bold;
@@ -161,8 +172,9 @@ input[type="button"]:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  cursor: pointer;
 }
 
 /* Modal Content (image) */
@@ -186,7 +198,8 @@ input[type="button"]:hover {
 }
 
 /* Add Animation */
-.modal-content, #caption {  
+.modal-content,
+#caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -194,13 +207,21 @@ input[type="button"]:hover {
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* The Close Button */
@@ -222,7 +243,7 @@ input[type="button"]:hover {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
