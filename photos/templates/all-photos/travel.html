@@ -6,7 +6,7 @@
 <div class="container">
 
   <!-- Looping through photos   -->
-  {% for photos_item in photos %}
+  {% for photos_item in images %}
 
   <div class="row">
     <!-- displaying photos articles -->
@@ -22,9 +22,11 @@
   </div>
 
   {% empty %}
-  <div class="row">
-    <h4 class="text-center mt-5">There Are No photos Items</h4>
-  </div>
+    <div class="container-fluid bg">
+      <div class="row">
+        <h4 class="ppf">There Are No photos Items</h4>
+      </div>
+    </div>
   {% endfor %}
 
 </div>

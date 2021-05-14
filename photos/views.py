@@ -13,13 +13,14 @@ def contact(request):
     return render(request, 'contact.html')
 
 def travel_photos(request):
-    return render(request, 'all-photos/travel.html')
+    images = Image.search_by_category("travel")
+    return render(request, 'all-photos/travel.html', {"images":images})
 
 def search_results(request):
     
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
-        searched_images = Image.search_by_category(search_term)
+        searched_images = Image.search_by_category(search_term.lower())
         message = f"{search_term}"
         
-        return render(request, 'all-photos/search.html', {"message":message})
+        return render(request, 'all-photos/search.html', {"message":message, "images":searched_images})
