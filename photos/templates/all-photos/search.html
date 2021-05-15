@@ -1,10 +1,10 @@
 {%extends 'all-photos/base.html'%} {% block content %}
 <div class="container-fluid bgc">
   {% if images%}
-    <h2 class="ppf">Found {{ images|length }} of searched term {{message}}</h2>
-    {% else %}
-    <h2 class="ppc">Found 0 photos for the search term {{message}}</h2>
-    {% endif %}
+  <h2 class="ppf">Found {{ images|length }} of searched term {{message}}</h2>
+  {% else %}
+  <h2 class="ppc">Found 0 photos for the search term {{message}}</h2>
+  {% endif %}
 </div>
 <div class="container-fluid mt-3">
   <div class="gallery col-md-4">
@@ -12,19 +12,29 @@
     <!--Display photos Article images  -->
     <div class="row">
       <div class="">
-        <img src="{{ image.image.url }}" class="img-responsive mt-4" alt="Image" width="600" height="200">
+        <img
+          id="myImg"
+          src="{{image.image.url}}"
+          class="img-responsive mt-4"
+          alt="{{ image.image.name }}"
+        />
         {{ image.image.url }}
+        <!-- Image Modal -->
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img" />
+          <div id="caption"></div>
+        </div>
       </div>
     </div>
     {% endfor %} {% endif %}
   </div>
 </div>
 <a
-      id="back-to-top"
-      href="#"
-      class="btn btn-light btn-lg back-to-top"
-      role="button"
-      ><i class="fa fa-chevron-up"></i
-    ></a>
+  id="back-to-top"
+  href="#"
+  class="btn btn-light btn-lg back-to-top"
+  role="button"
+  ><i class="fa fa-chevron-up"></i
+></a>
 {% endblock %}
-
