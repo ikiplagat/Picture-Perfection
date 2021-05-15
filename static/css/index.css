@@ -8,7 +8,7 @@ html {
 }
 .navbar {
   background: #5ae881;
-  border-bottom: 1px solid rgba(21,3,3,.2);
+  border-bottom: 1px solid rgba(21, 3, 3, 0.2);
 }
 .bg {
   background: #5ae881;
@@ -63,7 +63,7 @@ html {
   position: absolute;
   background: #5ae881;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .drop:hover .dropdown-menu {
@@ -136,26 +136,33 @@ input[type="button"]:hover {
   padding-right: 250px;
 }
 .gallery {
-  margin: 10px;
   float: left;
 }
-
 .gallery:hover {
-  border: 1px solid #777;
+  /* border: 1px solid #777; */
   opacity: 0.7;
 }
-
 .gallery img {
-  width: 100%;
+  width: 410px;
   height: auto;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   border: none;
   border-radius: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: center;
+  object-fit: contain;
 }
-#myImg {
-  cursor: pointer;
+.center {
+  width: 410px;
+  overflow: hidden;
+ }
+.row {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .marginleft {
   margin-left: 100px;
@@ -266,3 +273,20 @@ input[type="button"]:hover {
   }
 }
 
+@media only screen and (max-width: 1100px) {
+  .gallery img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .gallery img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
