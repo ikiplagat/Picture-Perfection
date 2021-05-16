@@ -30,7 +30,7 @@ def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
         searched_images = Image.search_by_category(search_term.lower())
-        searched_images = Image.search_by_location(search_term.lower())
+        # searched_images = Image.search_by_location(search_term.lower())
         message = f"{search_term}"
         
         return render(request, 'all-photos/search.html', {"message":message, "images":searched_images})

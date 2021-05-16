@@ -6,19 +6,20 @@
   <h2 class="ppc">Found 0 photos for the search term {{message}}</h2>
   {% endif %}
 </div>
-<div class="container-fluid mt-3">
+<div class="container-fluid pt-3">
+  <!-- Looping through photos   -->
+  {% for photos_item in images %}
+
   <div class="gallery col-md-4">
-    {% if images %} {% for image in images %}
     <!--Display photos Article images  -->
     <div class="row">
       <div class="">
         <img
           id="myImg"
-          src="{{image.image.url}}"
+          src="{{photos_item.image.url}}"
           class="img-responsive mt-4"
-          alt="{{ image.image.name }}"
+          alt="{{ photos_item.image.name }}"
         />
-        {{ image.image.url }}
         <!-- Image Modal -->
         <div id="myModal" class="modal">
           <span class="close">&times;</span>
@@ -27,8 +28,8 @@
         </div>
       </div>
     </div>
-    {% endfor %} {% endif %}
   </div>
+  {% endfor %}
 </div>
 <a
   id="back-to-top"
