@@ -1,4 +1,5 @@
 import os
+import cloudinary
 
 """
 Django settings for gallery project.
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'photos.apps.PhotosConfig',
     'bootstrap5',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+cloudinary.config(
+    cloud_name="kasparov",
+    api_key="623993469388411",
+    api_secret="VCf65PVv1BM09CJbTXCjj2pprRc",
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

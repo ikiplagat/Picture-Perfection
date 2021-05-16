@@ -1,11 +1,13 @@
 from django.core.checks import messages
-from photos.models import Image
+from photos.models import Category, Image, Location
 from django.shortcuts import render
 
 # Create your views here.
 def welcome(request):
     images = Image.objects.all()
-    return render(request, 'index.html', {"images":images})
+    location = Location.objects.all()
+    category = Category.objects.all()
+    return render(request, 'index.html', {"images":images, "location":location, "category":category})
 
 def about(request):
     return render(request, 'about.html')
@@ -13,17 +15,15 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def travel_photos(request):
-    images = Image.search_by_category("travel")
-    return render(request, 'all-photos/travel.html', {"images":images})
+def get_category(request, category_id):
+    category = Category.objects.get(id = category_id)
+    images = Image.search_by_category(category)
+    return render(request, 'all-photos/category.html', {"images":images})
 
-def food_photos(request):
-    images = Image.search_by_category("food")
-    return render(request, 'all-photos/food.html', {"images":images})
-
-def fitness_photos(request):
-    images = Image.search_by_category("fitness")
-    return render(request, 'all-photos/fitness.html', {"images":images})
+def get_location(request, location_id):
+    location = Location.objects.get(id = location_id)
+    images = Image.search_by_location(location)
+    return render(request, 'all-photos/category.html', {"images":images})
 
 def search_results(request):
     
@@ -34,3 +34,4 @@ def search_results(request):
         message = f"{search_term}"
         
         return render(request, 'all-photos/search.html', {"message":message, "images":searched_images})
+    

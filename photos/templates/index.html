@@ -20,6 +20,14 @@
     <div id="wrapper">
       {% include "navbar.html" %} {% block content %}
       <div class="bg">
+        <div class="margtp">
+          <a class="title" href="">Location</a> | 
+        {% for location in location %}
+        <a class="location" href="/location/{{location.id}}"
+          >{{location.name}}</a
+        >
+        {% endfor %}
+        </div>
         <h1 class="ppf">Picture Perfection</h1>
         <div class="pform">
           <form class="form" role="search" action="{% url 'search_results' %}">
@@ -40,7 +48,7 @@
               </div>
             </div>
           </form>
-          <p>Search by category or location</p>
+          <p>Search by category</p>
         </div>
       </div>
       <div class="container-fluid pt-3">
@@ -50,7 +58,7 @@
         <div class="gallery col-md-4">
           <!--Display photos Article images  -->
           <div class="row">
-            <div class="">
+            <div class="grid">
               <img
                 id="myImg"
                 src="{{photos_item.image.url}}"
