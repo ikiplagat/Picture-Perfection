@@ -1,37 +1,37 @@
 {%extends 'all-photos/base.html'%} 
 
 {% block content %}
-{{block.super}}
-{% if images %}
-  <div class="container-fluid bgc">
-    <h1 class="ppf">{{ image.category.name }}</h1>
-    <h1 class="marginleft">Inspire, Explore, Create & Showcase.</h1>
-  </div>
-{% endif %}
+
+<div class="container-fluid bgc">
+  <h1 class="ppf marginleft">Inspire, Explore, Create & Showcase.</h1>
+</div>
+
 <div class="container-fluid pt-3">
 
   <!-- Looping through photos   -->
   {% for photos_item in images %}
 
-    <div class="gallery col-md-4">
-      <!--Display photos Article images  -->
-      <div class="row">
-        <div class="">
-          <img
-            id="myImg"
-            src="{{photos_item.image.url}}"
-            class="img-responsive mt-4 please"
-            alt="{{ photos_item.image.name }}"
-          />
-          <!-- Image Modal -->
-          <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img" />
-            <div id="caption"></div>
-          </div>
+  <div class="gallery col-md-4">
+    <!--Display photos Article images  -->
+    <div class="row">
+      <div class="grid">
+        <img
+          id="myImg"
+          src="{{photos_item.image.url}}"
+          class="img-responsive mt-4 please"
+          alt="{{photos_item.description}}"
+          title="{{photos_item.name}}"
+        />
+        <!-- Image Modal -->
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img" />
+          <div id="caption"></div>
+          <div id="modal-body"></div>
         </div>
       </div>
     </div>
+  </div>
 
   {% empty %}
 

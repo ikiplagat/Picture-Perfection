@@ -19,8 +19,6 @@
   <body>
     {% include "navbar.html" %} {% block content %}{%endblock%}
 
-    <!-- {% include "footer.html" %} -->
-
     {% block scripts %}
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -37,10 +35,12 @@
       for (var i = 0; i < img.length; i++) {
         var modalImg = document.getElementById("img");
         var captionText = document.getElementById("caption");
+        var imageDetails = document.getElementById("modal-body");
         img[i].addEventListener("click", function () {
           modal.style.display = "block";
           modalImg.src = this.src;
           captionText.innerHTML = this.alt;
+          imageDetails.innerHTML = this.title;
         });
       }
 
